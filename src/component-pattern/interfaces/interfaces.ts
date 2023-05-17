@@ -1,9 +1,4 @@
-import { ReactElement } from "react";
-
-export interface IProductCardProps {
-	product: IProduct;
-	children?: ReactElement | ReactElement[];
-}
+import { CSSProperties, ReactElement } from "react";
 
 export interface IProduct {
 	id: string;
@@ -17,9 +12,33 @@ export interface IProductContextProps {
 	product: IProduct;
 }
 
+export interface IProductCardProps {
+	product: IProduct;
+	children?: ReactElement | ReactElement[];
+	className?: string;
+	style?: CSSProperties;
+}
+
+export interface IProductImageProps {
+	img?: string;
+	className?: string;
+	style?: CSSProperties;
+}
+
+export interface IProductTitleProps {
+	title?: string;
+	className?: string;
+	style?: CSSProperties;
+}
+
+export interface IProductButtonsProps {
+	className?: string;
+	style?: CSSProperties;
+}
+
 export interface IProductCardHOCProps {
-	({ children, product }: IProductCardProps): JSX.Element;
-	Title: ({ title }: { title?: string }) => JSX.Element;
-	Image: ({ img }: { img?: string }) => JSX.Element;
-	Buttons: () => JSX.Element;
+	(props: IProductCardProps): JSX.Element;
+	Image: (props: IProductImageProps) => JSX.Element;
+	Title: (props: IProductTitleProps) => JSX.Element;
+	Buttons: (props: IProductButtonsProps) => JSX.Element;
 }
