@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { ProductContext } from "./ProductCard";
-
 import { IProductButtonsProps } from "../interfaces/interfaces";
 import styles from "../styles/styles.module.css";
 

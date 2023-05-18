@@ -1,8 +1,6 @@
 import { useContext } from "react";
 import { ProductContext } from "./ProductCard";
-
 import { IProductTitleProps } from "../interfaces/interfaces";
-
 import styles from "../styles/styles.module.css";
 
 export const ProductTitle = ({

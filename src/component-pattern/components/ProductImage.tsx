@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { ProductContext } from "./ProductCard";
-
 import { IProductImageProps } from "../interfaces/interfaces";
 import styles from "../styles/styles.module.css";
 import noImage from "../assets/no-image.jpg";

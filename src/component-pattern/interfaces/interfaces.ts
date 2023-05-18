@@ -6,6 +6,10 @@ export interface IProduct {
 	img?: string;
 }
 
+export interface IProductCart extends IProduct {
+	count: number;
+}
+
 export interface IProductContextProps {
 	counter: number;
 	increaseBy: (value: number) => void;
@@ -17,6 +21,8 @@ export interface IProductCardProps {
 	children?: ReactElement | ReactElement[];
 	className?: string;
 	style?: CSSProperties;
+	onChange?: (args: IOnChangeArgs) => void;
+	value?: number;
 }
 
 export interface IProductImageProps {
@@ -41,4 +47,15 @@ export interface IProductCardHOCProps {
 	Image: (props: IProductImageProps) => JSX.Element;
 	Title: (props: IProductTitleProps) => JSX.Element;
 	Buttons: (props: IProductButtonsProps) => JSX.Element;
+}
+
+export interface IOnChangeArgs {
+	product: IProduct;
+	count: number;
+}
+
+export interface IUseProductArgs {
+	product: IProduct;
+	onChange?: (args: IOnChangeArgs) => void;
+	value?: number;
 }
