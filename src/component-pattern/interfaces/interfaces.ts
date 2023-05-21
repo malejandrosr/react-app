@@ -13,16 +13,24 @@ export interface IProductCart extends IProduct {
 export interface IProductContextProps {
 	counter: number;
 	increaseBy: (value: number) => void;
+	maxCount?: number;
 	product: IProduct;
+}
+
+export interface IInitialValues {
+	count?: number;
+	maxCount?: number;
 }
 
 export interface IProductCardProps {
 	product: IProduct;
-	children?: ReactElement | ReactElement[];
+	// children?: ReactElement | ReactElement[];
+	children: (args: IProductCardHandler) => JSX.Element;
 	className?: string;
 	style?: CSSProperties;
 	onChange?: (args: IOnChangeArgs) => void;
 	value?: number;
+	initialValues?: IInitialValues;
 }
 
 export interface IProductImageProps {
@@ -58,4 +66,14 @@ export interface IUseProductArgs {
 	product: IProduct;
 	onChange?: (args: IOnChangeArgs) => void;
 	value?: number;
+	initialValues?: IInitialValues;
+}
+
+export interface IProductCardHandler {
+	count: number;
+	isMaxCountReached: boolean;
+	maxCount?: number;
+	product: IProduct;
+	increaseBy: (value: number) => void;
+	reset: () => void;
 }
