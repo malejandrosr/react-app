@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import logo from "../logo.svg";
 import { routes } from "./routes";
-// import { LazyPage1, LazyPage2, LazyPage3 } from "../lazyload/pages";
 
 export const Navigation = () => {
 	return (
