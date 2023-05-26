@@ -2,7 +2,15 @@ import { LazyExoticComponent, lazy } from "react";
 
 import { NoLazy } from "../lazyload/pages";
 import { ShoppingPage } from "../component-pattern/pages";
-import { RegisterPage, FormikBasicPage, FormikYupPage, FormikComponentsPage, FormikAbstractPage } from "../forms/pages";
+import {
+	RegisterPage,
+	FormikBasicPage,
+	FormikYupPage,
+	FormikComponentsPage,
+	FormikAbstractPage,
+	FormikRegisterPage,
+	FormikDynamicPage,
+} from "../forms/pages";
 
 type JSXComponent = () => JSX.Element;
 
@@ -68,5 +76,17 @@ export const routes: IRoute[] = [
 		path: "formik-abstract",
 		Component: FormikAbstractPage,
 		name: "Formik Abstract Page",
+	},
+	{
+		to: "/formik-register",
+		path: "formik-register",
+		Component: FormikRegisterPage,
+		name: "Formik Register Page",
+	},
+	{
+		to: "/formik-dynamic",
+		path: "formik-dynamic",
+		Component: FormikDynamicPage,
+		name: "Formik Dynamic Page",
 	},
 ];
